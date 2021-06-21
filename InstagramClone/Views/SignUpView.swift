@@ -46,7 +46,8 @@ struct SignUpView: View {
                         
                         if profileImage != nil {
                             
-                            profileImage!.resizable()
+                            profileImage!
+                                .resizable()
                                 .clipShape(Circle())
                                 .frame(width: 200, height: 100)
                                 .padding(.top, 20)

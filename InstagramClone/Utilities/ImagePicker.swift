@@ -22,14 +22,10 @@ struct ImagePicker: UIViewControllerRepresentable {
         return picker
     }
     
-//    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
-//        
-//    }
-    
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        
+
     }
-    
+
     class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
         var parent: ImagePicker
