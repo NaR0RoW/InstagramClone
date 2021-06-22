@@ -8,5 +8,4 @@ struct User: Encodable, Decodable {
     var username: String
     var searchName: [String]
     var bio: String
-    
 }

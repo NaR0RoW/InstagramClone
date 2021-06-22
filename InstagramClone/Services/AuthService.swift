@@ -37,4 +37,35 @@ class AuthService {
             StorageService.saveProfileImage(userId: userId, username: username, email: email, imageData: imageData, metaData: metadata, storageProfileImageRef: storageProfileUserId, onSuccess: onSuccess, onError: onError)
         }
     }
+    
+    static func signIn(email: String, password: String, onSuccess: @escaping(_ user: User) -> Void, onError: @escaping (_ errorMessage: String) -> Void) {
+        
+        Auth.auth().signIn(withEmail: email, password: password) {
+            
+            (authData, error) in
+            
+            if error != nil {
+                
+                onError(error!.localizedDescription)
+                
+                return
+            }
+            
+            guard let userId = authData?.user.uid else { return }
+            
+            let firestoreUserId = getUserId(userId: userId)
+            
+            firestoreUserId.getDocument {
+                
+                (document, error) in
+                
+                if let dict = document?.data() {
+                    
+                    guard let decodedUser = try? User.init(fromDictionary: dict) else { return }
+                    
+                    onSuccess(decodedUser)
+                }
+            }
+        }
+    }
 }
