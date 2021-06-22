@@ -14,10 +14,7 @@ struct SignUpView: View {
     
     func loadImage() {
         
-        guard let inputImage = pickedImage else {
-            
-            return
-        }
+        guard let inputImage = pickedImage else { return }
         
         profileImage = inputImage
     }
