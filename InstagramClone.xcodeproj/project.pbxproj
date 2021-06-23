@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E45B9EC26836BF9003DF48A /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45B9EB26836BF9003DF48A /* Search.swift */; };
-		4E45B9EE26836C1D003DF48A /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45B9ED26836C1D003DF48A /* Add.swift */; };
+		4E45B9EE26836C1D003DF48A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45B9ED26836C1D003DF48A /* Post.swift */; };
 		4E45B9F026836C54003DF48A /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45B9EF26836C54003DF48A /* Notifications.swift */; };
 		4E45B9F226836C6E003DF48A /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45B9F126836C6E003DF48A /* Profile.swift */; };
 		4E45B9F426836C8F003DF48A /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45B9F326836C8F003DF48A /* Main.swift */; };
@@ -33,7 +33,7 @@
 
 /* Begin PBXFileReference section */
 		4E45B9EB26836BF9003DF48A /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
-		4E45B9ED26836C1D003DF48A /* Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
+		4E45B9ED26836C1D003DF48A /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4E45B9EF26836C54003DF48A /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		4E45B9F126836C6E003DF48A /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		4E45B9F326836C8F003DF48A /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 				4EAB92B02682422200AA1383 /* ContentView.swift */,
 				4E45B9F326836C8F003DF48A /* Main.swift */,
 				4E45B9EB26836BF9003DF48A /* Search.swift */,
-				4E45B9ED26836C1D003DF48A /* Add.swift */,
+				4E45B9ED26836C1D003DF48A /* Post.swift */,
 				4E45B9EF26836C54003DF48A /* Notifications.swift */,
 				4E45B9F126836C6E003DF48A /* Profile.swift */,
 			);
@@ -303,7 +303,7 @@
 				4E7E25C62680AEEE0098F8AD /* FormField.swift in Sources */,
 				4EAC5BF12680DB75001BDD72 /* Extensions.swift in Sources */,
 				4EAC5BEF2680D79C001BDD72 /* UserModel.swift in Sources */,
-				4E45B9EE26836C1D003DF48A /* Add.swift in Sources */,
+				4E45B9EE26836C1D003DF48A /* Post.swift in Sources */,
 				4EAB92A92682172A00AA1383 /* AuthService.swift in Sources */,
 				4E7E25CB2680B3A40098F8AD /* ButtonModifiers.swift in Sources */,
 				4EAB92AB2682174A00AA1383 /* StorageService.swift in Sources */,

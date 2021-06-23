@@ -30,7 +30,7 @@ struct CustomTabView: View {
                 Search()
                     .tag("magnifyingglass")
                 
-                Add()
+                Post()
                     .tag("camera.viewfinder")
                 
                 Notifications()

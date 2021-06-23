@@ -16,7 +16,7 @@ struct SignUpView: View {
     @State private var alertTitle: String = "On No 😭"
     
     func loadImage() {
-      
+        
         guard let inputImage = pickedImage else { return }
         
         profileImage = inputImage
@@ -35,9 +35,8 @@ struct SignUpView: View {
     func signUp() {
         
         if let error = errorCheck() {
-        
-            self.error = error
             
+            self.error = error
             self.showingAlert = true
             
             return
@@ -54,7 +53,6 @@ struct SignUpView: View {
             print("Error \(errorMessage)")
             
             self.error = errorMessage
-            
             self.showingAlert = true
             
             return
@@ -62,12 +60,11 @@ struct SignUpView: View {
     }
     
     func clear() {
-        
         self.email = ""
-        
         self.username = ""
-        
         self.password = ""
+        self.imageData = Data()
+        self.profileImage = Image(systemName: "person.circle.fill")
     }
     
     var body: some View {
@@ -100,7 +97,6 @@ struct SignUpView: View {
                                 .frame(width: 200, height: 100)
                                 .padding(.top, 20)
                                 .onTapGesture {
-                                    
                                     self.showingActionSheet = true
                                 }
                         } else {
@@ -111,7 +107,6 @@ struct SignUpView: View {
                                 .frame(width: 100, height: 100)
                                 .padding(.top, 20)
                                 .onTapGesture {
-                                  
                                     self.showingActionSheet = true
                                 }
                         }
@@ -129,34 +124,29 @@ struct SignUpView: View {
                 }
                 
                 Button(action: signUp) {
-                  
+                    
                     Text("Sign Up")
                         .font(.title)
                         .modifier(ButtonModifiers())
                 }
                 .alert(isPresented: $showingAlert) {
-                  
                     Alert(title: Text(alertTitle), message: Text(error), dismissButton: .default(Text("OK")))
                 }
             }
             .padding()
         }
         .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-           
+            
             ImagePicker(pickedImage: self.$pickedImage, showImagePicker: self.$showingImagePicker, imageData: self.$imageData)
         }
         .actionSheet(isPresented: $showingActionSheet) {
             
             ActionSheet(title: Text(""), buttons: [.default(Text("Choose A Photo")) {
-            
                 self.sourceType = .photoLibrary
-                
                 self.showingImagePicker = true
             },
             .default(Text("Take A Photo")) {
-                
                 self.sourceType = .camera
-                
                 self.showingImagePicker = true
             },
             .cancel()
