@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct SignInView: View {
-    
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var error: String = ""
@@ -9,14 +8,11 @@ struct SignInView: View {
     @State private var alertTitle: String = "On No 😭"
     
     func clear() {
-     
         self.email = ""
-        
         self.password = ""
     }
     
     func errorCheck() -> String? {
-        
         if email.trimmingCharacters(in: .whitespaces).isEmpty || password.trimmingCharacters(in: .whitespaces).isEmpty {
         
             return "Please fill in all fields."
@@ -26,28 +22,18 @@ struct SignInView: View {
     }
     
     func signIn() {
-     
         if let error = errorCheck() {
-        
             self.error = error
-            
             self.showingAlert = true
             
             return
         }
         
-        AuthService.signIn(email: email, password: password, onSuccess: {
-            
-            (user) in
-            
+        AuthService.signIn(email: email, password: password, onSuccess: { (user) in
             self.clear()
-        }) {
-            (errorMessage) in
-            
+        }) { (errorMessage) in
             print("Error \(errorMessage)")
-            
             self.error = errorMessage
-            
             self.showingAlert = true
             
             return
@@ -55,11 +41,9 @@ struct SignInView: View {
     }
     
     var body: some View {
-
         NavigationView {
             
             VStack(spacing: 20) {
-                
                 Image(systemName: "camera")
                     .font(.system(size: 60, weight: .black, design: .monospaced))
                 

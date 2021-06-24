@@ -50,7 +50,6 @@ struct SignUpView: View {
         }) {
             (errorMessage) in
             
-            print("Error \(errorMessage)")
             
             self.error = errorMessage
             self.showingAlert = true

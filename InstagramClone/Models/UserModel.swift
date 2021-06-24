@@ -1,7 +1,6 @@
 import Foundation
 
 struct User: Encodable, Decodable {
-    
     var uid: String
     var email: String
     var profileImageUrl: String

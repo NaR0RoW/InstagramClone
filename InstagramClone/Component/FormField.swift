@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct FormField: View {
-    
     @Binding var value: String
     
     var icon: String
@@ -9,7 +8,6 @@ struct FormField: View {
     var placeholder: String
     
     var body: some View {
-        
         Group {
         
             HStack {
@@ -18,12 +16,9 @@ struct FormField: View {
                     .padding()
                 
                 Group {
-                    
                     if isSecure {
-                        
                         SecureField(placeholder, text: $value)
                     } else {
-                        
                         TextField(placeholder, text: $value)
                     }
                 }
