@@ -123,7 +123,6 @@ struct SignUpView: View {
                 }
                 
                 Button(action: signUp) {
-                    
                     Text("Sign Up")
                         .font(.title)
                         .modifier(ButtonModifiers())
@@ -135,11 +134,9 @@ struct SignUpView: View {
             .padding()
         }
         .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-            
             ImagePicker(pickedImage: self.$pickedImage, showImagePicker: self.$showingImagePicker, imageData: self.$imageData)
         }
         .actionSheet(isPresented: $showingActionSheet) {
-            
             ActionSheet(title: Text(""), buttons: [.default(Text("Choose A Photo")) {
                 self.sourceType = .photoLibrary
                 self.showingImagePicker = true

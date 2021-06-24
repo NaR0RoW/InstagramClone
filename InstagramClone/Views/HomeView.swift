@@ -5,8 +5,13 @@ struct HomeView: View {
     var body: some View {
         
         VStack {
-            
-            CustomTabView()
+            NavigationView {
+                
+                CustomTabView()
+            }
+            .navigationTitle("")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
         }
     }
 }
@@ -22,25 +27,22 @@ struct CustomTabView: View {
         
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             
-            NavigationView {
+            TabView(selection: $selectedTab) {
                 
-                TabView(selection: $selectedTab) {
-                    
-                    Main()
-                        .tag("house.fill")
-                    
-                    Search()
-                        .tag("magnifyingglass")
-                    
-                    Post()
-                        .tag("camera.viewfinder")
-                    
-                    Notifications()
-                        .tag("heart.fill")
-                    
-                    Profile()
-                        .tag("person.fill")
-                }
+                Main()
+                    .tag("house.fill")
+                
+                Search()
+                    .tag("magnifyingglass")
+                
+                Post()
+                    .tag("camera.viewfinder")
+                
+                Notifications()
+                    .tag("heart.fill")
+                
+                Profile()
+                    .tag("person.fill")
             }
             .accentColor(.pink)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
