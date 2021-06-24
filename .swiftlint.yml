@@ -1,0 +1,8 @@
+disabled_rules:
+    - function_parameter_count
+    - force_cast
+    - multiple_closures_with_trailing_closure
+    - unused_enumerated
+    
+excluded:
+    - Pods

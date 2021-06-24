@@ -2,19 +2,14 @@ import SwiftUI
 
 struct FormField: View {
     @Binding var value: String
-    
     var icon: String
     var isSecure: Bool = false
     var placeholder: String
-    
     var body: some View {
         Group {
-        
             HStack {
-            
                 Image(systemName: icon)
                     .padding()
-                
                 Group {
                     if isSecure {
                         SecureField(placeholder, text: $value)
