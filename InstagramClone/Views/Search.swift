@@ -5,7 +5,7 @@ struct Search: View {
         VStack {
             Text("Search")
         }
-//        .navigationTitle("")
-//        .navigationBarHidder(true)
+        .navigationTitle("")
+        .navigationBarHidden(true)
     }
 }
