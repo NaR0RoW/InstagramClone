@@ -3,6 +3,9 @@ import SDWebImageSwiftUI
 
 struct ProfileHeader: View {
     var user: User?
+    var postsCount: Int
+    @Binding var following: Int
+    @Binding var followers: Int
     var body: some View {
         HStack {
             VStack {
@@ -18,6 +21,8 @@ struct ProfileHeader: View {
                         .frame(width: 100, height: 100, alignment: .trailing)
                         .padding(.leading)
                 }
+                // FIXME: FIX THIS force unwrap optional value
+                // Thread 1: Fatal error: Unexpectedly found nil while unwrapping an Optional value
                 Text(user!.username)
                     .font(.headline)
                     .bold()
@@ -27,9 +32,18 @@ struct ProfileHeader: View {
                 HStack {
                     Spacer()
                     VStack {
+                        Text("Posts")
+                            .font(.footnote)
+                        Text("\(postsCount)")
+                            .font(.title)
+                            .bold()
+                    }
+                    .padding(.top, 60)
+                    Spacer()
+                    VStack {
                         Text("Followers")
-                            .font(.headline)
-                        Text("20")
+                            .font(.footnote)
+                        Text("\(followers)")
                             .font(.title)
                             .bold()
                     }
@@ -37,8 +51,8 @@ struct ProfileHeader: View {
                     Spacer()
                     VStack {
                         Text("Following")
-                            .font(.headline)
-                        Text("20")
+                            .font(.footnote)
+                        Text("\(following)")
                             .font(.title)
                             .bold()
                     }

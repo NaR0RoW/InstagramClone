@@ -6,6 +6,10 @@ struct SignInView: View {
     @State private var error: String = ""
     @State private var showingAlert: Bool = false
     @State private var alertTitle: String = "On No 😭"
+    @EnvironmentObject var session: SessionStore
+    func listen() {
+        session.listen()
+    }
     func clear() {
         self.email = ""
         self.password = ""
@@ -44,7 +48,9 @@ struct SignInView: View {
                 }
                 FormField(value: $email, icon: "envelope.fill", placeholder: "E-mail")
                 FormField(value: $password, icon: "lock.fill", isSecure: true, placeholder: "Password")
-                Button(action: signIn) {
+                Button(action: { signIn()
+                    listen()
+                }) {
                     Text("Sign In")
                         .font(.title)
                         .modifier(ButtonModifiers())

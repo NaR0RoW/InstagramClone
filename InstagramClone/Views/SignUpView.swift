@@ -13,6 +13,7 @@ struct SignUpView: View {
     @State private var error: String = ""
     @State private var showingAlert: Bool = false
     @State private var alertTitle: String = "On No 😭"
+    @State private var isLinkActive: Bool = false
     func loadImage() {
         guard let inputImage = pickedImage else {return}
         profileImage = inputImage
@@ -86,10 +87,14 @@ struct SignUpView: View {
                     FormField(value: $email, icon: "envelope.fill", placeholder: "E-mail")
                     FormField(value: $password, icon: "lock.fill", isSecure: true, placeholder: "Password")
                 }
-                Button(action: signUp) {
+                NavigationLink(destination: SignInView(), isActive: $isLinkActive) {
+                Button(action: { signUp()
+                    self.isLinkActive = true
+                }) {
                     Text("Sign Up")
                         .font(.title)
                         .modifier(ButtonModifiers())
+                }
                 }
                 .alert(isPresented: $showingAlert) {
                     Alert(title: Text(alertTitle), message: Text(error), dismissButton: .default(Text("OK")))
