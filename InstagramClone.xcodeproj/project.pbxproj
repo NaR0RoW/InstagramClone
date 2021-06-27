@@ -18,6 +18,9 @@
 		4E3931F126889EB10025AEE0 /* UsersProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3931F026889EB10025AEE0 /* UsersProfileView.swift */; };
 		4E3931F32688A51C0025AEE0 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3931F22688A51C0025AEE0 /* CommentModel.swift */; };
 		4E3931F52688A5EF0025AEE0 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3931F42688A5EF0025AEE0 /* CommentService.swift */; };
+		4E3931F72688AFAE0025AEE0 /* CommentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3931F62688AFAE0025AEE0 /* CommentCard.swift */; };
+		4E3931F92688B0C10025AEE0 /* CommentInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3931F82688B0C10025AEE0 /* CommentInput.swift */; };
+		4E3931FB2688B2E70025AEE0 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3931FA2688B2E70025AEE0 /* CommentView.swift */; };
 		4E45B9EC26836BF9003DF48A /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45B9EB26836BF9003DF48A /* Search.swift */; };
 		4E45B9EE26836C1D003DF48A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45B9ED26836C1D003DF48A /* Post.swift */; };
 		4E45B9F026836C54003DF48A /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45B9EF26836C54003DF48A /* Notifications.swift */; };
@@ -58,6 +61,9 @@
 		4E3931F026889EB10025AEE0 /* UsersProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersProfileView.swift; sourceTree = "<group>"; };
 		4E3931F22688A51C0025AEE0 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		4E3931F42688A5EF0025AEE0 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
+		4E3931F62688AFAE0025AEE0 /* CommentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCard.swift; sourceTree = "<group>"; };
+		4E3931F82688B0C10025AEE0 /* CommentInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInput.swift; sourceTree = "<group>"; };
+		4E3931FA2688B2E70025AEE0 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		4E45B9EB26836BF9003DF48A /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		4E45B9ED26836C1D003DF48A /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4E45B9EF26836C54003DF48A /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
@@ -157,6 +163,9 @@
 				4E381A0E2684C98A0083CECA /* PostCard.swift */,
 				4E67CA0B2685E6730092269C /* SearchBar.swift */,
 				4E3931EE26889CB40025AEE0 /* FollowButton.swift */,
+				4E3931F62688AFAE0025AEE0 /* CommentCard.swift */,
+				4E3931F82688B0C10025AEE0 /* CommentInput.swift */,
+				4E3931FA2688B2E70025AEE0 /* CommentView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -388,6 +397,8 @@
 				4E7E25C92680B1D30098F8AD /* SignInView.swift in Sources */,
 				4E79622F26861A6B00B2F40A /* UserProfile.swift in Sources */,
 				4E3931F32688A51C0025AEE0 /* CommentModel.swift in Sources */,
+				4E3931FB2688B2E70025AEE0 /* CommentView.swift in Sources */,
+				4E3931F72688AFAE0025AEE0 /* CommentCard.swift in Sources */,
 				4E7E25CD2680B6C50098F8AD /* SignUpView.swift in Sources */,
 				4E3931F52688A5EF0025AEE0 /* CommentService.swift in Sources */,
 				4EAB92AF2682411D00AA1383 /* HomeView.swift in Sources */,
@@ -395,6 +406,7 @@
 				4E46000B26838EEE00D783BC /* PostModel.swift in Sources */,
 				4E381A0D2684C7E10083CECA /* PostCardImage.swift in Sources */,
 				4E46000D268391E600D783BC /* PostService.swift in Sources */,
+				4E3931F92688B0C10025AEE0 /* CommentInput.swift in Sources */,
 				4E3931ED268896900025AEE0 /* FollowService.swift in Sources */,
 				4E3931F126889EB10025AEE0 /* UsersProfileView.swift in Sources */,
 				4EAB92B12682422200AA1383 /* ContentView.swift in Sources */,

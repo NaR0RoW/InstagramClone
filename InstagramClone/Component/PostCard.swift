@@ -32,19 +32,23 @@ struct PostCard: View {
                         .scaleEffect(animate ? animationScale : 1)
                         .animation(.easeIn(duration: duration))
                 }
-                Image(systemName: "bubble.right")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 25, height: 25, alignment: .center)
+                NavigationLink(destination: CommentView(post: self.postCardService.post)) {
+                    Image(systemName: "bubble.right")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 25, height: 25, alignment: .center)
+                }
                 Spacer()
             }
             .padding(.leading, 16)
             if self.postCardService.post.likeCount > 0 {
                 Text("\(self.postCardService.post.likeCount) likes")
             }
-            Text("View Comments")
-                .font(.caption)
-                .padding(.leading)
+            NavigationLink(destination: CommentView(post: self.postCardService.post)) {
+                Text("View Comments")
+                    .font(.caption)
+                    .padding(.leading)
+            }
         }
     }
 }
