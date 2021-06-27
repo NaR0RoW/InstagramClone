@@ -21,12 +21,14 @@ struct ProfileHeader: View {
                         .frame(width: 100, height: 100, alignment: .trailing)
                         .padding(.leading)
                 }
-                // FIXME: FIX THIS force unwrap optional value
-                // Thread 1: Fatal error: Unexpectedly found nil while unwrapping an Optional value
-                Text(user!.username)
-                    .font(.headline)
-                    .bold()
-                    .padding(.leading)
+                if user != nil {
+                    Text(user!.username)
+                        .font(.headline)
+                        .bold()
+                        .padding(.leading)
+                } else {
+                    Text("")
+                }
             }
             VStack {
                 HStack {

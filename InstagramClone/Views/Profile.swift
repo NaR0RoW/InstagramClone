@@ -4,7 +4,7 @@ import SwiftUI
 
 struct Profile: View {
     @EnvironmentObject var session: SessionStore
-    @StateObject var profileService = ProfieleService()
+    @StateObject var profileService = ProfileService()
     @State private var selection: Int = 1
     let threeColumns = [GridItem(), GridItem(), GridItem()]
     var body: some View {
