@@ -11,20 +11,24 @@ class PostCardService: ObservableObject {
         post.likeCount += 1
         isLiked = true
         PostService.postsUserId(userId: post.ownerId).collection("posts")
-            .document(post.postId).updateData(["likeCount": post.likeCount, "\(Auth.auth().currentUser!.uid)": true])
+            .document(post.postId)
+            .updateData(["likeCount": post.likeCount, "likes.\(Auth.auth().currentUser!.uid)": true])
         PostService.AllPosts.document(post.postId)
-            .updateData(["likeCount": post.likeCount, "\(Auth.auth().currentUser!.uid)": true])
+            .updateData(["likeCount": post.likeCount, "likes.\(Auth.auth().currentUser!.uid)": true])
         PostService.timelineUserId(userId: post.ownerId).collection("timeline")
-            .document(post.postId).updateData(["likeCount": post.likeCount, "\(Auth.auth().currentUser!.uid)": true])
+            .document(post.postId)
+            .updateData(["likeCount": post.likeCount, "likes.\(Auth.auth().currentUser!.uid)": true])
     }
     func unlike() {
         post.likeCount -= 1
         isLiked = false
         PostService.postsUserId(userId: post.ownerId).collection("posts")
-            .document(post.postId).updateData(["likeCount": post.likeCount, "\(Auth.auth().currentUser!.uid)": false])
+            .document(post.postId)
+            .updateData(["likeCount": post.likeCount, "likes.\(Auth.auth().currentUser!.uid)": false])
         PostService.AllPosts.document(post.postId).updateData(["likeCount": post.likeCount,
-                                                               "\(Auth.auth().currentUser!.uid)": false])
+                                                               "likes.\(Auth.auth().currentUser!.uid)": false])
         PostService.timelineUserId(userId: post.ownerId).collection("timeline")
-            .document(post.postId).updateData(["likeCount": post.likeCount, "\(Auth.auth().currentUser!.uid)": false])
+            .document(post.postId)
+            .updateData(["likeCount": post.likeCount, "likes.\(Auth.auth().currentUser!.uid)": false])
     }
 }

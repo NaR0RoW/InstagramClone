@@ -22,19 +22,19 @@ struct UserProfile: View {
                     })
                 if !isLoading {
                     ForEach(users, id: \.uid) { user in
-                        HStack {
-                            WebImage(url: URL(string: user.profileImageUrl)!)
-                                .resizable()
-                                .scaledToFit()
-                                .clipShape(Circle())
-                                .frame(width: 60, height: 60, alignment: .trailing)
-                                .padding()
-                            Text(user.username)
-                                .font(.subheadline)
-                                .bold()
+                        NavigationLink(destination: UsersProfileView(user: user)) {
+                            HStack {
+                                WebImage(url: URL(string: user.profileImageUrl)!)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .clipShape(Circle())
+                                    .frame(width: 60, height: 60, alignment: .trailing)
+                                    .padding()
+                                Text(user.username)
+                                    .font(.subheadline)
+                                    .bold()
+                            }
                         }
-                        Divider()
-                            .background(Color.black)
                     }
                 }
             }
