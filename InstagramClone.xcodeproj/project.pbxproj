@@ -22,6 +22,9 @@
 		4E3931F92688B0C10025AEE0 /* CommentInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3931F82688B0C10025AEE0 /* CommentInput.swift */; };
 		4E3931FB2688B2E70025AEE0 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3931FA2688B2E70025AEE0 /* CommentView.swift */; };
 		4E412BD22689DEF900FDB255 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E412BD12689DEF900FDB255 /* EditProfile.swift */; };
+		4E412BD42689E65A00FDB255 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E412BD32689E65A00FDB255 /* Chat.swift */; };
+		4E412BD62689E74A00FDB255 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E412BD52689E74A00FDB255 /* Message.swift */; };
+		4E412BD82689E7A900FDB255 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E412BD72689E7A900FDB255 /* ChatService.swift */; };
 		4E45B9EC26836BF9003DF48A /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45B9EB26836BF9003DF48A /* Search.swift */; };
 		4E45B9EE26836C1D003DF48A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45B9ED26836C1D003DF48A /* Post.swift */; };
 		4E45B9F026836C54003DF48A /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45B9EF26836C54003DF48A /* Notifications.swift */; };
@@ -66,6 +69,9 @@
 		4E3931F82688B0C10025AEE0 /* CommentInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInput.swift; sourceTree = "<group>"; };
 		4E3931FA2688B2E70025AEE0 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		4E412BD12689DEF900FDB255 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
+		4E412BD32689E65A00FDB255 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		4E412BD52689E74A00FDB255 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		4E412BD72689E7A900FDB255 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		4E45B9EB26836BF9003DF48A /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		4E45B9ED26836C1D003DF48A /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4E45B9EF26836C54003DF48A /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
@@ -212,6 +218,7 @@
 				4E67CA0D2685E8600092269C /* SearchService.swift */,
 				4E3931EC268896900025AEE0 /* FollowService.swift */,
 				4E3931F42688A5EF0025AEE0 /* CommentService.swift */,
+				4E412BD72689E7A900FDB255 /* ChatService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -222,6 +229,8 @@
 				4EAC5BEE2680D79C001BDD72 /* UserModel.swift */,
 				4E46000A26838EEE00D783BC /* PostModel.swift */,
 				4E3931F22688A51C0025AEE0 /* CommentModel.swift */,
+				4E412BD32689E65A00FDB255 /* Chat.swift */,
+				4E412BD52689E74A00FDB255 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -391,9 +400,11 @@
 				4E45B9EE26836C1D003DF48A /* Post.swift in Sources */,
 				4EAB92A92682172A00AA1383 /* AuthService.swift in Sources */,
 				4E381A0A2684B17B0083CECA /* PostCardService.swift in Sources */,
+				4E412BD62689E74A00FDB255 /* Message.swift in Sources */,
 				4E7E25CB2680B3A40098F8AD /* ButtonModifiers.swift in Sources */,
 				4E381A0F2684C98A0083CECA /* PostCard.swift in Sources */,
 				4E412BD22689DEF900FDB255 /* EditProfile.swift in Sources */,
+				4E412BD82689E7A900FDB255 /* ChatService.swift in Sources */,
 				4EAB92AB2682174A00AA1383 /* StorageService.swift in Sources */,
 				4E7E25D02680B8940098F8AD /* ImagePicker.swift in Sources */,
 				4E45B9F026836C54003DF48A /* Notifications.swift in Sources */,
@@ -403,6 +414,7 @@
 				4E3931F32688A51C0025AEE0 /* CommentModel.swift in Sources */,
 				4E3931FB2688B2E70025AEE0 /* CommentView.swift in Sources */,
 				4E3931F72688AFAE0025AEE0 /* CommentCard.swift in Sources */,
+				4E412BD42689E65A00FDB255 /* Chat.swift in Sources */,
 				4E7E25CD2680B6C50098F8AD /* SignUpView.swift in Sources */,
 				4E3931F52688A5EF0025AEE0 /* CommentService.swift in Sources */,
 				4EAB92AF2682411D00AA1383 /* HomeView.swift in Sources */,
