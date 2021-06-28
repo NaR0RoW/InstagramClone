@@ -56,32 +56,57 @@ class StorageService {
                 onError(error!.localizedDescription)
                 return
             }
-            storagePostRef.putData(imageData, metadata: metadata) { (_, error) in
-                if error != nil {
-                    onError(error!.localizedDescription)
-                    return
+            storagePostRef.downloadURL { (url, error) in
+                if let metaImageUrl = url?.absoluteString {
+                    let firestorePostRef = PostService.postsUserId(userId: userId)
+                        .collection("posts").document(postId)
+                    let post = PostModel.init(caption: caption, likes: [:], geoLocation: "", ownerId: userId,
+                                              postId: postId, username: Auth.auth().currentUser!.displayName!,
+                                              profile: Auth.auth().currentUser!.photoURL!.absoluteString,
+                                              mediaUrl: metaImageUrl,
+                                              date: Date().timeIntervalSince1970, likeCount: 0)
+                    guard let dict = try? post.asDisctionary() else {return}
+                    firestorePostRef.setData(dict) { (error) in
+                        if error != nil {
+                            onError(error!.localizedDescription)
+                            return
+                        }
+                        PostService.timelineUserId(userId: userId).collection("timeline")
+                            .document(postId).setData(dict)
+                        PostService.AllPosts.document(postId).setData(dict)
+                        onSuccess()
+                    }
                 }
-                storagePostRef.downloadURL { (url, error) in
-                    if let metaImageUrl = url?.absoluteString {
-                        let firestorePostRef = PostService.postsUserId(userId: userId)
-                            .collection("posts").document(postId)
-                        let post = PostModel.init(caption: caption, likes: [:], geoLocation: "", ownerId: userId,
-                                                  postId: postId, username: Auth.auth().currentUser!.displayName!,
-                                                  profile: Auth.auth().currentUser!.photoURL!.absoluteString,
-                                                  mediaUrl: metaImageUrl,
-                                                  date: Date().timeIntervalSince1970, likeCount: 0)
-                        guard let dict = try? post.asDisctionary() else {return}
-                        firestorePostRef.setData(dict) { (error) in
+            }
+        }
+    }
+    static func editProfile(userId: String, username: String,
+                            bio: String, imageData: Data, metaData: StorageMetadata,
+                            storageProfileImageRef: StorageReference,
+                            onError: @escaping(_ errorMessage: String) -> Void) {
+        storageProfileImageRef.putData(imageData, metadata: metaData) { (_, error) in
+            if error != nil {
+                onError(error!.localizedDescription)
+                return
+            }
+            storageProfileImageRef.downloadURL { (url, error) in
+                if let metaImageUrl = url?.absoluteString {
+                    if let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest() {
+                        changeRequest.photoURL = url
+                        changeRequest.displayName = username
+                        changeRequest.commitChanges { (error) in
                             if error != nil {
                                 onError(error!.localizedDescription)
                                 return
                             }
-                            PostService.timelineUserId(userId: userId).collection("timeline")
-                                .document(postId).setData(dict)
-                            PostService.AllPosts.document(postId).setData(dict)
-                            onSuccess()
                         }
                     }
+                    let firestoreUserId = AuthService.getUserId(userId: userId)
+                    firestoreUserId.updateData([
+                        "profileImageUrl": metaImageUrl,
+                        "username": username,
+                        "bio": bio
+                    ])
                 }
             }
         }

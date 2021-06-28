@@ -16,8 +16,10 @@ struct Main: View {
         .navigationTitle("")
         .navigationBarHidden(true)
         .onAppear {
-            // bad force unwrap
-            self.profileService.loadUserPosts(userId: Auth.auth().currentUser!.uid )
+            // MARK: Good force unwrapp?
+            if Auth.auth().currentUser?.uid != nil {
+                self.profileService.loadUserPosts(userId: Auth.auth().currentUser!.uid)
+            } else {return}
         }
     }
 }

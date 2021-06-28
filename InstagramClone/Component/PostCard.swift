@@ -41,14 +41,16 @@ struct PostCard: View {
                 Spacer()
             }
             .padding(.leading, 16)
-            if self.postCardService.post.likeCount > 0 {
-                Text("\(self.postCardService.post.likeCount) likes")
+            VStack {
+                if self.postCardService.post.likeCount > 0 {
+                    Text("\(self.postCardService.post.likeCount) likes")
+                }
+                NavigationLink(destination: CommentView(post: self.postCardService.post)) {
+                    Text("View Comments")
+                        .font(.caption)
+                }
             }
-            NavigationLink(destination: CommentView(post: self.postCardService.post)) {
-                Text("View Comments")
-                    .font(.caption)
-                    .padding(.leading)
-            }
+            .padding(.leading)
         }
     }
 }

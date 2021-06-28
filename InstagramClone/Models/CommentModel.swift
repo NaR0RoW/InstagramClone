@@ -1,6 +1,5 @@
 import Foundation
 
-// All is fine
 struct CommentModel: Encodable, Decodable, Identifiable {
     var id = UUID()
     var profile: String

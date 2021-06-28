@@ -11,7 +11,6 @@ class CommentService: ObservableObject {
     static func commentsId(postId: String) -> DocumentReference {
         return commentsRef.document(postId)
     }
-    // no error in post comment
     func postComment(comment: String, username: String,
                      profile: String, ownerId: String, postId: String,
                      onSuccess: @escaping() -> Void, onError: @escaping(_ error: String) -> Void) {
@@ -27,7 +26,6 @@ class CommentService: ObservableObject {
             onSuccess()
         }
     }
-    // no error in get comments
     func getComments(postId: String, onSuccess: @escaping([CommentModel]) -> Void,
                      onError: @escaping(_ error: String) -> Void,
                      newComment: @escaping(CommentModel) -> Void,
@@ -54,7 +52,6 @@ class CommentService: ObservableObject {
             }
         listener(listenerPosts)
     }
-    // no error in load comment
     func loadComment() {
         self.comments = []
         self.isLoading = true

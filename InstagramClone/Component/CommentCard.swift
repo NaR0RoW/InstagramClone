@@ -1,7 +1,6 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-// All is fine
 struct CommentCard: View {
     var comment: CommentModel
     var body: some View {

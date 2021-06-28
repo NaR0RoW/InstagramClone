@@ -5,8 +5,10 @@ class PostCardService: ObservableObject {
     @Published var post: PostModel!
     @Published var isLiked: Bool = false
     func hasLikedPost() {
-        // bad force unwrap 
-        isLiked = (post.likes["\(Auth.auth().currentUser!.uid)"] == true) ? true: false
+        // MARK: Good force unwrapp?
+        if Auth.auth().currentUser?.uid != nil {
+            isLiked = (post.likes["\(Auth.auth().currentUser!.uid)"] == true) ? true: false
+        } else {return}
     }
     func like() {
         post.likeCount += 1

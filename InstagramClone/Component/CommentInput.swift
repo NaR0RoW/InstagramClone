@@ -1,7 +1,6 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-// All is fine
 struct CommentInput: View {
     @EnvironmentObject var session: SessionStore
     @ObservedObject var commentService = CommentService()

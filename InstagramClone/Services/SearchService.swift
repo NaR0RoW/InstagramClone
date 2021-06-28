@@ -6,10 +6,7 @@ class SearchService {
         AuthService.storeRoot.collection("users")
             .whereField("searchName", arrayContains: input.lowercased()
                             .removeWhiteSpace()).getDocuments { (querySnapshot, _) in
-            guard let snap = querySnapshot else {
-                print("error")
-                return
-            }
+            guard let snap = querySnapshot else {return}
             var users = [User]()
             for document in snap.documents {
                 let dict = document.data()
